@@ -146,7 +146,8 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-远程仓库的详细操作" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-远程仓库的详细操作" class="article article-type-post "
+  itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
@@ -157,26 +158,29 @@
     </h1>
   
 
-        <a href="/2016/07/25/远程仓库的详细操作/" class="archive-article-date">
+          <a href="/2016/07/25/远程仓库的详细操作/" class="archive-article-date">
   	<time datetime="2016-07-25T07:55:24.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2016-07-25</time>
 </a>
       </header>
-    
-    <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="远程仓库的详细操作"><a href="#远程仓库的详细操作" class="headerlink" title="远程仓库的详细操作"></a>远程仓库的详细操作</h1><h2 id="在文件修改之后-如何将修改的内容推送到远程仓库中"><a href="#在文件修改之后-如何将修改的内容推送到远程仓库中" class="headerlink" title="在文件修改之后,如何将修改的内容推送到远程仓库中"></a>在文件修改之后,如何将修改的内容推送到远程仓库中</h2><ol>
+        <!-- 目录内容 -->
+        
+            <!-- 目录内容结束 -->
+            <div class="article-entry" itemprop="articleBody">
+              
+                        <h1 id="远程仓库的详细操作"><a href="#远程仓库的详细操作" class="headerlink" title="远程仓库的详细操作"></a>远程仓库的详细操作</h1><h2 id="在文件修改之后-如何将修改的内容推送到远程仓库中"><a href="#在文件修改之后-如何将修改的内容推送到远程仓库中" class="headerlink" title="在文件修改之后,如何将修改的内容推送到远程仓库中"></a>在文件修改之后,如何将修改的内容推送到远程仓库中</h2><ol>
 <li>要使用git pull来获取一下远程仓库中最新的代码</li>
 <li>再使用git push将自己修改的内容推送到远程仓库中</li>
 <li>获取服务器中更新的内容,git pull加远程地址</li>
 </ol>
 
-      
+                          
 
-      
+                            
     </div>
     <div class="article-info article-info-index">
       
-      
+          
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags"></i>
 		<ul class="article-tag-list">
@@ -188,12 +192,12 @@
 		</ul>
 	</div>
 
-      
+            
 
-      
+              
 
-      
-        
+                  
+                    
 <div class="share-btn share-icons tooltip-left">
   <div class="tooltip tooltip-east">
     <span class="tooltip-item">
@@ -243,10 +247,10 @@
 </div>
 
 <div class="mask js-mask"></div>
-      
-      <div class="clearfix"></div>
+                      
+                        <div class="clearfix"></div>
     </div>
-  </div>
+    </div>
 </article>
 
   
@@ -269,13 +273,13 @@
   
 </nav>
 
+    
 
+      
 
+            
 
-
-
-
-
+                  
 
           </div>
         </div>
@@ -295,7 +299,7 @@
     </div>
     <script>
 	var yiliaConfig = {
-		mathjax: false,
+		mathjax: true,
 		isHome: false,
 		isPost: true,
 		isArchive: false,
@@ -324,6 +328,27 @@
 </script>
 
 
+
+
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+    tex2jax: {
+        inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+        processEscapes: true,
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    }
+});
+
+MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i=0; i < all.length; i += 1) {
+        all[i].SourceElement().parentNode.className += ' has-jax';                 
+    }       
+});
+</script>
+
+<script src="//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
 
 
     
@@ -379,6 +404,10 @@
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="color3">随笔</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="color3">测试</a>
               </li>
             
             <div class="clearfix"></div>
