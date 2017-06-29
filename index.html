@@ -292,6 +292,100 @@
                   
 
   
+    <article id="post-模块化内容" class="article article-type-post  article-index"
+  itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/06/29/模块化内容/">模块化内容</a>
+    </h1>
+  
+
+          <a href="/2016/06/29/模块化内容/" class="archive-article-date">
+  	<time datetime="2016-06-29T13:40:07.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2016-06-29</time>
+</a>
+      </header>
+      
+            <div class="article-entry" itemprop="articleBody">
+              
+                        <h1 id="博学谷-第5天"><a href="#博学谷-第5天" class="headerlink" title="博学谷 第5天"></a>博学谷 第5天</h1><h2 id="模块化"><a href="#模块化" class="headerlink" title="模块化"></a>模块化</h2><h3 id="CommonJS"><a href="#CommonJS" class="headerlink" title="CommonJS"></a>CommonJS</h3><p>js代码的模块化标准，不适用于前端开发，NodeJS在使用该标准实现模块化</p>
+<h3 id="AMD"><a href="#AMD" class="headerlink" title="AMD"></a>AMD</h3><p>Async Module Definition 异步模块定义</p>
+<p>尽可能早的加载所有需要用到的模块，模块的加载都是异步的，如果要在模块加载完成后，利用模块中的内容实现某些功能，需要将代码写在 require的第二个参数的回调函数中</p>
+<p>require.js  </p>
+<h3 id="CMD"><a href="#CMD" class="headerlink" title="CMD"></a>CMD</h3><p>Common Module Definition 通用模块定义</p>
+<p>尽可能晚的加载模块，哪里用到了模块再去加载</p>
+<p>sea.js</p>
+<p>##　require.js实现模块化</p>
+<h3 id="定义模块"><a href="#定义模块" class="headerlink" title="定义模块"></a>定义模块</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">define([<span class="string">"当前模块的依赖项"</span>...], <span class="function"><span class="keyword">function</span>(<span class="params">使用形参接收依赖项的返回值</span>)</span>&#123;</div><div class="line">	<span class="comment">//当前模块中要实现的功能</span></div><div class="line"></div><div class="line">	<span class="comment">//当前模块如果要提供内容给模块调用者使用，就需要通过return语句将需要体用给别人的内容进行返回</span></div><div class="line"></div><div class="line">	<span class="keyword">return</span> 需要给别人提供的内容;</div><div class="line">&#125;)</div></pre></td></tr></table></figure>
+<h3 id="引用模块"><a href="#引用模块" class="headerlink" title="引用模块"></a>引用模块</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">require</span>([<span class="string">"模块路径/模块别名"</span>...], <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">	<span class="comment">//这个函数会在模块加载完成之后，被调用起来</span></div><div class="line">	<span class="comment">//如果想在模块加载完成后实现某些功能，那么代码都写到这个函数中！</span></div><div class="line">&#125;)</div></pre></td></tr></table></figure>
+<h3 id="data-main"><a href="#data-main" class="headerlink" title="data-main"></a>data-main</h3><p>在引用require.js的script标签中可以通过data-main指定一个入口文件，这个入口文件中的内容，会在reuqirejs加载完毕之后，被自动执行。</p>
+<p>data-main指定的这个文件是异步加载的！所以在下面如果有使用这个文件中相关内容的代码，就不能够保证执行正常</p>
+<h3 id="路径的说明"><a href="#路径的说明" class="headerlink" title="路径的说明"></a>路径的说明</h3><ol>
+<li><p>如果直接使用script在html当中引入模块，那么模块的路径查找会以当前html文件作为基础。 （没有配置baseUrl，也没有data-main属性）</p>
+</li>
+<li><p>如果使用data-main属性，那么这时候的模块路径查找，会以入口文件所在的路径作为基础去查找（没有设置baseUrl）</p>
+</li>
+<li><p>如果通过require.config()配置了baseUrl，那么所有的模块的路径查找，都会以这个baseUrl做为基础！</p>
+</li>
+</ol>
+<h3 id="require-config方法的说明"><a href="#require-config方法的说明" class="headerlink" title="require.config方法的说明"></a>require.config方法的说明</h3><p>这个方法主要用来配置requirejs相关的内容</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">require</span>.config(&#123;</div><div class="line">	<span class="comment">//配置基础路径，所有的模块查找都以这个路径为基础</span></div><div class="line">	<span class="comment">//这个路径一般情况下配置为绝对路径，并且设置为所有模块共享的路径</span></div><div class="line">	baseUrl: <span class="string">"/"</span>,</div><div class="line"></div><div class="line">	<span class="comment">//paths可以用来为单个路径设置别名，以后在使用模块的时候，直接使用别名即可，不需要再写完整的路径了</span></div><div class="line">	<span class="comment">//如果模块是一个具名模块，那么这个别名一定要和具名模块的名称一致</span></div><div class="line">	<span class="comment">//.js 不要！！！</span></div><div class="line">	paths: &#123;</div><div class="line">		<span class="string">"jquery"</span>: <span class="string">"views/assets/jquery/jqeury.min"</span></div><div class="line">	&#125;</div><div class="line">&#125;);</div></pre></td></tr></table></figure>
+<h3 id="如何加载第三方内容"><a href="#如何加载第三方内容" class="headerlink" title="如何加载第三方内容"></a>如何加载第三方内容</h3><h4 id="实现了模块化的第三方内容加载"><a href="#实现了模块化的第三方内容加载" class="headerlink" title="实现了模块化的第三方内容加载"></a>实现了模块化的第三方内容加载</h4><p>直接使用require，就像使用正常模块一样即可！</p>
+<h4 id="未实现模块化的第三方内容加载"><a href="#未实现模块化的第三方内容加载" class="headerlink" title="未实现模块化的第三方内容加载"></a>未实现模块化的第三方内容加载</h4><ol>
+<li>需要考虑该内容是否有依赖项</li>
+<li><p>需要考虑该内容是否有返回值（是否要提供内容给外部使用）<br>如果有依赖项，需要通过require.config方法配置该模块的依赖项</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">require</span>.config(&#123;</div><div class="line">	<span class="attr">baseUrl</span>: <span class="string">"/"</span>,</div><div class="line">	<span class="attr">paths</span>: &#123;</div><div class="line">		<span class="string">"jquery"</span>: <span class="string">"views/assets/jquery/jqeury.min"</span>,</div><div class="line">		<span class="string">"animate"</span>: <span class="string">"animate/animate"</span></div><div class="line">	&#125;,</div><div class="line">	<span class="comment">//配置的是第三方内容的依赖项以及输出项</span></div><div class="line">	shim: &#123;</div><div class="line">		<span class="comment">//模块别名： 配置信息</span></div><div class="line">		<span class="string">"animate"</span>: &#123;</div><div class="line">			<span class="comment">//deps属性可以用来配置这个模块的依赖项</span></div><div class="line">			deps: [<span class="string">"jquery"</span>],</div><div class="line">			<span class="comment">//export可以配置输出项</span></div><div class="line">			<span class="comment">//输出项的内容其实就是在第三方内容中去查找和配置名称相对应的全局变量，将其值作为模块的输出值！</span></div><div class="line">			exports: <span class="string">"animate"</span></div><div class="line">		&#125;</div><div class="line">	&#125;</div><div class="line">&#125;);</div></pre></td></tr></table></figure>
+</li>
+<li><p>如果第三方内容没有实现模块化，并且没有依赖项，也没有输出项，直接require即可！！！</p>
+</li>
+</ol>
+<h3 id="具名模块匿名模块"><a href="#具名模块匿名模块" class="headerlink" title="具名模块匿名模块"></a>具名模块匿名模块</h3><p>具名模块有名字<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">define(<span class="string">"名字"</span>, [], <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">	</div><div class="line">&#125;)</div></pre></td></tr></table></figure></p>
+<p>匿名模块没名字<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">define([], <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">	</div><div class="line">&#125;)</div></pre></td></tr></table></figure></p>
+
+                          
+
+                            
+    </div>
+    <div class="article-info article-info-index">
+      
+          
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags"></i>
+		<ul class="article-tag-list">
+			 
+        <li class="article-tag-list-item">
+        	<a href="javascript:void(0)" class="article-tag-list-link color3">随笔</a>
+        </li>
+      
+		</ul>
+	</div>
+
+            
+
+              
+                <p class="article-more-link">
+                  <a class="article-more-a" href="/2016/06/29/模块化内容/">
+                    展开全文 >></a>
+                </p>
+                
+
+                  
+                        <div class="clearfix"></div>
+    </div>
+    </div>
+</article>
+
+
+      
+
+            
+
+                  
+
+  
     <article id="post-git的基本使用" class="article article-type-post  article-index"
   itemscope itemprop="blogPost">
   <div class="article-inner">
