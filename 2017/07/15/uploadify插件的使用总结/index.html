@@ -6,14 +6,19 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>Archives: 2017 | Violet Dan&#39;s Blog</title>
+  <title>uploadify插件的使用总结 | Violet Dan&#39;s Blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="Violet Dan&#39;s Blog">
-<meta property="og:url" content="http://yoursite.com/archives/2017/index.html">
+  <meta name="description" content="uploadify插件的使用总结 引包 123&amp;lt;link rel=&quot;stylesheet&quot; href=&quot;uploadify/uploadify.css&quot;&amp;gt;&amp;lt;script src=&quot;jquery.js&quot;&amp;gt;&amp;lt;/script&amp;gt;&amp;lt;script src=&quot;uploadify/jquery.uploadify.js&quot;&amp;gt;&amp;lt;/script&amp;gt;  调用upl">
+<meta name="keywords" content="随笔">
+<meta property="og:type" content="article">
+<meta property="og:title" content="uploadify插件的使用总结">
+<meta property="og:url" content="http://yoursite.com/2017/07/15/uploadify插件的使用总结/index.html">
 <meta property="og:site_name" content="Violet Dan&#39;s Blog">
+<meta property="og:description" content="uploadify插件的使用总结 引包 123&amp;lt;link rel=&quot;stylesheet&quot; href=&quot;uploadify/uploadify.css&quot;&amp;gt;&amp;lt;script src=&quot;jquery.js&quot;&amp;gt;&amp;lt;/script&amp;gt;&amp;lt;script src=&quot;uploadify/jquery.uploadify.js&quot;&amp;gt;&amp;lt;/script&amp;gt;  调用upl">
+<meta property="og:updated_time" content="2017-07-15T00:39:46.356Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Violet Dan&#39;s Blog">
+<meta name="twitter:title" content="uploadify插件的使用总结">
+<meta name="twitter:description" content="uploadify插件的使用总结 引包 123&amp;lt;link rel=&quot;stylesheet&quot; href=&quot;uploadify/uploadify.css&quot;&amp;gt;&amp;lt;script src=&quot;jquery.js&quot;&amp;gt;&amp;lt;/script&amp;gt;&amp;lt;script src=&quot;uploadify/jquery.uploadify.js&quot;&amp;gt;&amp;lt;/script&amp;gt;  调用upl">
   
     <link rel="alternative" href="/atom.xml" title="Violet Dan&#39;s Blog" type="application/atom+xml">
   
@@ -141,35 +146,40 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
+            <article id="post-uploadify插件的使用总结" class="article article-type-post "
+  itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
   
+    <h1 class="article-title" itemprop="name">
+      uploadify插件的使用总结
+    </h1>
   
-    
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2017" class="archive-year">2017</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2017/07/15/uploadify插件的使用总结/" class="archive-article-date">
+
+          <a href="/2017/07/15/uploadify插件的使用总结/" class="archive-article-date">
   	<time datetime="2017-07-15T00:38:38.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-07-15</time>
 </a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/07/15/uploadify插件的使用总结/">uploadify插件的使用总结</a>
-    </h1>
-  
+      </header>
+      
+            <div class="article-entry" itemprop="articleBody">
+              
+                        <h1 id="uploadify插件的使用总结"><a href="#uploadify插件的使用总结" class="headerlink" title="uploadify插件的使用总结"></a>uploadify插件的使用总结</h1><ol>
+<li><p>引包</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">link</span> <span class="attr">rel</span>=<span class="string">"stylesheet"</span> <span class="attr">href</span>=<span class="string">"uploadify/uploadify.css"</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">"jquery.js"</span>&gt;</span><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">"uploadify/jquery.uploadify.js"</span>&gt;</span><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></div></pre></td></tr></table></figure>
+</li>
+<li><p>调用uploadify提供的方法</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"file"</span> <span class="attr">id</span>=<span class="string">"file"</span>&gt;</span></div></pre></td></tr></table></figure>
+</li>
+</ol>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div></pre></td><td class="code"><pre><div class="line">$(<span class="string">"#file"</span>).uploadify(&#123;</div><div class="line">	<span class="comment">//指定swf文件的路径！！！ 推荐使用绝对路径</span></div><div class="line">	swf: <span class="string">"/views/assets/uploadify/uploadify.swf"</span>,</div><div class="line">	<span class="comment">//指定上传文件的接口地址</span></div><div class="line">	uploader: <span class="string">"/api/uploader/avatar"</span>,</div><div class="line">	<span class="comment">//指定上传文件的时候，文件的键， 后台需要通过该值来获取文件的内容</span></div><div class="line">	fileObjName: <span class="string">"tc_avatar"</span>,</div><div class="line">	<span class="comment">//尺寸</span></div><div class="line">	width: <span class="number">100</span>,</div><div class="line">	<span class="attr">height</span>: <span class="number">100</span>,</div><div class="line">	<span class="comment">//类样式，附加一个类样式给上传按钮</span></div><div class="line">	buttonClass: <span class="string">"类名"</span>,</div><div class="line">	<span class="comment">//按钮的文字</span></div><div class="line">	buttonText: <span class="string">"上传图片"</span>,</div><div class="line">	<span class="comment">//设置上传图片的大小限制，可以是一个字符串单位可以是B KB MB GB</span></div><div class="line">	fileSizeLimit: <span class="string">"100KB"</span>,</div><div class="line">	<span class="comment">//设置上传文件的类型，也就是在选择文件的窗口中筛选指定类型的文件</span></div><div class="line">	fileTypeExts: <span class="string">'*.gif; *.jpg; *.png'</span>,</div><div class="line">	<span class="comment">//formData  在上传文件的时候，可以附带一些数据，类似于ajax提交数据</span></div><div class="line">	formData: &#123;<span class="attr">key</span>: value&#125;,</div><div class="line">	<span class="comment">//设置上传进度的模板！</span></div><div class="line">	itemTemplate : <span class="string">'&lt;p&gt;&lt;/p&gt;'</span></div><div class="line">	<span class="comment">//onUploadSuccess 上传成功之后的回调函数</span></div><div class="line">	onUploadSuccess: <span class="function"><span class="keyword">function</span>(<span class="params">file, data, response</span>)</span>&#123;</div><div class="line">		</div><div class="line">	&#125;,</div><div class="line">	<span class="comment">//onUploadComplete</span></div><div class="line">	<span class="comment">//onUploadError</span></div><div class="line">	<span class="comment">//onUploadProgress</span></div><div class="line">	<span class="comment">//onUploadStart</span></div><div class="line">	<span class="comment">//onUploadSuccess</span></div><div class="line">&#125;);</div></pre></td></tr></table></figure>
+                          
 
-        <div class="article-info info-on-right">
+                            
+    </div>
+    <div class="article-info article-info-index">
+      
           
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags"></i>
@@ -182,58 +192,85 @@
 		</ul>
 	</div>
 
-          
+            
 
+              
+
+                  
+                    
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      </div>
+    </span>
   </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2017/06/28/cookie/" class="archive-article-date">
-  	<time datetime="2017-06-28T09:36:27.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-06-28</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/06/28/cookie/">cookie</a>
-    </h1>
-  
+</div>
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags"></i>
-		<ul class="article-tag-list">
-			 
-        <li class="article-tag-list-item">
-        	<a href="javascript:void(0)" class="article-tag-list-link color3">随笔</a>
-        </li>
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="http://s.jiathis.com/qrcode.php?url=http://yoursite.com/2017/07/15/uploadify插件的使用总结/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+                      
+                        <div class="clearfix"></div>
+    </div>
+    </div>
+</article>
+
+  
+<nav id="article-nav">
+  
+  
+    <a href="/2017/06/28/cookie/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">cookie</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+    
+
       
-		</ul>
-	</div>
 
-          
+            
 
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-  
-    </div></section>
-  
-
-    
-
+                  
 
           </div>
         </div>
@@ -255,8 +292,8 @@
 	var yiliaConfig = {
 		mathjax: true,
 		isHome: false,
-		isPost: false,
-		isArchive: true,
+		isPost: true,
+		isArchive: false,
 		isTag: false,
 		isCategory: false,
 		open_in_new: false,
